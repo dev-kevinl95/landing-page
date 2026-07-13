@@ -1,22 +1,26 @@
-## Development
+# AGENTS.md — Landing Page
 
-When starting the dev server, use background mode:
+Minimal [Astro](https://astro.build) 7 project. Single page, no integrations, no tests.
 
-```
-astro dev --background
-```
+## Commands
 
-Manage the background server with `astro dev stop`, `astro dev status`, and `astro dev logs`.
+| Command | Action |
+| -------- | -------- |
+| `npm run dev` | Dev server at `localhost:4321` |
+| `npm run build` | Production build to `dist/` |
+| `npm run preview` | Preview production build locally |
 
-## Documentation
+## Structure
 
-Full documentation: https://docs.astro.build
+- **Pages** — `src/pages/` (`.astro` or `.md`), each file maps to a route
+- **Components** — `src/components/` (any framework or plain `.astro`)
+- **Static assets** — `public/`
+- **Build output** — `dist/` (gitignored)
+- **Generated types** — `.astro/` (gitignored)
 
-Consult these guides before working on related tasks:
+## Conventions
 
-- [Adding pages, dynamic routes, or middleware](https://docs.astro.build/en/guides/routing/)
-- [Working with Astro components](https://docs.astro.build/en/basics/astro-components/)
-- [Using React, Vue, Svelte, or other framework components](https://docs.astro.build/en/guides/framework-components/)
-- [Adding or managing content](https://docs.astro.build/en/guides/content-collections/)
-- [Adding styles or using Tailwind](https://docs.astro.build/en/guides/styling/)
-- [Supporting multiple languages](https://docs.astro.build/en/guides/internationalization/)
+- TypeScript strict mode via `astro/tsconfigs/strict`
+- Node >=22.12.0 required
+- No linter, formatter, or test suite configured
+- VS Code: install `astro-build.astro-vscode` extension
