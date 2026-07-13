@@ -1,0 +1,96 @@
+---
+---
+
+<section class="hero">
+  <div class="hero__content">
+    <p class="hero__greeting">Hola, soy</p>
+    <h1 class="hero__name">Kevin Larico</h1>
+    <p class="hero__tagline">Desarrollador web</p>
+    <p class="hero__tagline">Construyo aplicaciones web modernas utilizando React, TypeScript y Astro.</p>
+    <div class="hero__actions">
+      <a class="hero__btn hero__btn--primary" href="#proyectos">Ver Proyectos</a>
+      <a class="hero__btn hero__btn--secondary" href="#">Descargar CV</a>
+    </div>
+  </div>
+  <div class="hero__image" aria-label="Foto de perfil">
+    <svg width="280" height="280" viewBox="0 0 280 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="280" height="280" rx="140" fill="#e2e8f0"/>
+      <circle cx="140" cy="110" r="45" fill="#94a3b8"/>
+      <ellipse cx="140" cy="230" rx="70" ry="60" fill="#94a3b8"/>
+    </svg>
+  </div>
+</section>
+
+<style>
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    gap: 3rem;
+  }
+
+  .hero__content {
+    flex: 1;
+  }
+
+  .hero__greeting {
+    font-size: 1.125rem;
+    color: #64748b;
+    margin-bottom: 0.25rem;
+  }
+
+  .hero__name {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero__tagline {
+    font-size: 1.25rem;
+    color: #475569;
+    margin-bottom: 2rem;
+  }
+
+  .hero__actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .hero__btn {
+    display: inline-block;
+    padding: 0.75rem 1.75rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: background-color 0.2s, color 0.2s;
+  }
+
+  .hero__btn--primary {
+    background-color: #0f172a;
+    color: #fff;
+  }
+
+  .hero__btn--primary:hover {
+    background-color: #1e293b;
+  }
+
+  .hero__btn--secondary {
+    background-color: #f1f5f9;
+    color: #0f172a;
+  }
+
+  .hero__btn--secondary:hover {
+    background-color: #e2e8f0;
+  }
+
+  .hero__image {
+    flex-shrink: 0;
+  }
+</style>
