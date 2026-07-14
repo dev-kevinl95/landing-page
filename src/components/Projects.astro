@@ -1,0 +1,34 @@
+---
+import { projects } from '../data/projects';
+import ProjectCard from './ProjectCard.astro';
+---
+
+<section class="projects">
+  <h2 class="projects__title">Proyectos</h2>
+  <div class="projects__grid">
+    {projects.map((project) => (
+      <ProjectCard project={project} />
+    ))}
+  </div>
+</section>
+
+<style>
+  .projects {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+  }
+
+  .projects__title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 2rem;
+  }
+
+  .projects__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+</style>

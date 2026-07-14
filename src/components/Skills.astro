@@ -1,0 +1,61 @@
+---
+import { skills } from '../data/skills';
+---
+
+<section class="skills">
+  <h2 class="skills__title">Tecnologías</h2>
+  <div class="skills__grid">
+    {skills.map(({ icon, name }) => (
+      <div class="skills__item">
+        <svg viewBox="0 0 24 24" width="48" height="48" fill="currentColor">
+          <path d={icon.path} />
+        </svg>
+        <span class="skills__name">{name}</span>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .skills {
+    max-width: 48rem;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+  }
+
+  .skills__title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 2rem;
+  }
+
+  .skills__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .skills__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.25rem 0.75rem;
+    border-radius: 0.75rem;
+    background-color: #f8fafc;
+    transition: background-color 0.2s, transform 0.2s;
+  }
+
+  .skills__item:hover {
+    background-color: #f1f5f9;
+    transform: translateY(-2px);
+  }
+
+  .skills__name {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #475569;
+    text-align: center;
+  }
+</style>
