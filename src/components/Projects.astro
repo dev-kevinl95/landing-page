@@ -26,6 +26,7 @@ import ProjectCard from './ProjectCard.astro';
   }
 
   .projects__title {
+    text-align: center;
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 2rem;
@@ -39,5 +40,17 @@ import ProjectCard from './ProjectCard.astro';
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
+  }
+
+  @media (max-width: 1024px) {
+    .projects__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .projects__grid {
+      grid-template-columns: 1fr;
+    }
   }
 </style>

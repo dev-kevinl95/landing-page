@@ -119,18 +119,21 @@ const placeholderInitial = project.title.charAt(0).toUpperCase();
     padding: 1.25rem;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 0.75rem;
     position: relative;
     z-index: 1;
   }
 
   .card__title {
+    text-align: center;
     font-size: 1.125rem;
     font-weight: 700;
     color: #0f172a;
   }
 
   .card__desc {
+    text-align: center;
     font-size: 0.875rem;
     line-height: 1.6;
     color: #64748b;
@@ -138,6 +141,7 @@ const placeholderInitial = project.title.charAt(0).toUpperCase();
 
   .card__techs {
     display: flex;
+    justify-content: center;
     gap: 0.5rem;
     flex-wrap: wrap;
   }
@@ -164,7 +168,7 @@ const placeholderInitial = project.title.charAt(0).toUpperCase();
     font-weight: 600;
     text-decoration: none;
     transition: box-shadow 0.3s, transform 0.2s;
-    align-self: flex-start;
+    align-self: center;
   }
 
   .card__btn:hover {

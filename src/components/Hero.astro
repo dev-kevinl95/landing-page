@@ -1,5 +1,6 @@
 ---
 import profileImage from '../assets/images/profile.webp';
+import { CV_URL } from '../data/socials';
 ---
 
 <section class="hero">
@@ -10,7 +11,7 @@ import profileImage from '../assets/images/profile.webp';
       <p class="hero__tagline">Desarrollador web &mdash; construyo aplicaciones modernas con React, TypeScript y Astro.</p>
       <div class="hero__actions">
         <a class="hero__btn hero__btn--primary" href="#proyectos">Ver Proyectos</a>
-        <a class="hero__btn hero__btn--secondary" href="#">Descargar CV</a>
+        <a class="hero__btn hero__btn--secondary" href={CV_URL}>Descargar CV</a>
       </div>
     </div>
     <div class="hero__image" aria-label="Foto de perfil">
@@ -121,24 +122,25 @@ import profileImage from '../assets/images/profile.webp';
   }
 
   .hero__btn--primary {
-    background: rgba(255, 255, 255, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: #fff;
+    background: #fff;
+    border: none;
+    color: #6366f1;
   }
 
   .hero__btn--primary:hover {
-    background: rgba(255, 255, 255, 0.22);
-    transform: translateY(-1px);
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 24px rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
   }
 
   .hero__btn--secondary {
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.25);
     color: #fff;
   }
 
   .hero__btn--secondary:hover {
-    background: rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.2);
     transform: translateY(-1px);
   }
 
