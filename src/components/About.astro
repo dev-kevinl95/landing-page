@@ -2,33 +2,57 @@
 ---
 
 <section class="about" id="proyectos">
-  <h2 class="about__title">Sobre mí</h2>
-  <p class="about__text">
-    Desarrollador de software con experiencia previa en el desarrollo de
-    videojuegos utilizando Unity. Actualmente me especializo en Frontend con
-    React, TypeScript y Astro, donde construyo aplicaciones web modernas con un
-    enfoque en la calidad del código, el rendimiento y la experiencia del
-    usuario.
-  </p>
-  <ul class="about__list">
-    <li>📍 Lima, Perú</li>
-    <li>💼 Buscando oportunidades como Frontend Developer</li>
-    <li>🎮 Desarrollador de videojuegos con Unity</li>
-  </ul>
+  <div class="about__inner">
+    <div class="about__card">
+      <h2 class="about__title">Sobre mí</h2>
+      <p class="about__text">
+        Desarrollador de software con experiencia previa en el desarrollo de
+        videojuegos utilizando Unity. Actualmente me especializo en Frontend con
+        React, TypeScript y Astro, donde construyo aplicaciones web modernas con un
+        enfoque en la calidad del código, el rendimiento y la experiencia del
+        usuario.
+      </p>
+      <ul class="about__list">
+        <li>📍 Lima, Perú</li>
+        <li>💼 Buscando oportunidades como Frontend Developer</li>
+        <li>🎮 Desarrollador de videojuegos con Unity</li>
+      </ul>
+    </div>
+  </div>
 </section>
 
 <style>
   .about {
+    background: linear-gradient(180deg, #fff, #eef2ff);
+    padding: 4rem 2rem;
+  }
+
+  .about__inner {
     max-width: 48rem;
     margin: 0 auto;
-    padding: 4rem 2rem;
+  }
+
+  .about__card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    border-radius: 0.75rem;
+    padding: 2rem;
+    transition: box-shadow 0.3s;
+  }
+
+  .about__card:hover {
+    box-shadow: 0 8px 32px rgba(99, 102, 241, 0.08);
   }
 
   .about__title {
     font-size: 2rem;
     font-weight: 700;
-    color: #0f172a;
     margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, #6366f1, #3b82f6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
 
   .about__text {

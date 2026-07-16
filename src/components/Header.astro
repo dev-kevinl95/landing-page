@@ -2,10 +2,73 @@
 ---
 
 <header class="header">
-  <span class="header__logo">LandingPage</span>
-  <nav class="header__nav">
-    <a class="header__link" href="/">Inicio</a>
-    <a class="header__link" href="/#proyectos">Proyecto</a>
-    <a class="header__link" href="/#contacto">Contacto</a>
-  </nav>
+  <div class="header__inner">
+    <span class="header__logo">LandingPage</span>
+    <nav class="header__nav">
+      <a class="header__link" href="/">Inicio</a>
+      <a class="header__link" href="/#proyectos">Proyecto</a>
+      <a class="header__link" href="/#contacto">Contacto</a>
+    </nav>
+  </div>
 </header>
+
+<style>
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(226, 232, 240, 0.5);
+    padding: 0 2rem;
+  }
+
+  .header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 1.25rem 0;
+  }
+
+  .header__logo {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: #0f172a;
+  }
+
+  .header__nav {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .header__link {
+    position: relative;
+    color: #475569;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.2s;
+  }
+
+  .header__link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #6366f1;
+    border-radius: 1px;
+    transition: width 0.25s, left 0.25s;
+  }
+
+  .header__link:hover {
+    color: #6366f1;
+  }
+
+  .header__link:hover::after {
+    width: 100%;
+    left: 0;
+  }
+</style>

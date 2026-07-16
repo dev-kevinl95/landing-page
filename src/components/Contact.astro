@@ -3,66 +3,70 @@ const accessKey = import.meta.env.PUBLIC_WEB3FORMS_KEY;
 ---
 
 <section class="contact" id="contacto">
-  <h2 class="contact__title">Contacto</h2>
-  <form class="contact__form" id="contact-form">
-    <input type="hidden" name="access_key" value={accessKey} />
-    <input
-      type="hidden"
-      name="subject"
-      value="Nuevo mensaje desde LandingPage"
-    />
-    <input type="checkbox" name="botcheck" style="display: none" />
+  <div class="contact__inner">
+    <h2 class="contact__title">Contacto</h2>
+    <div class="contact__card">
+      <form class="contact__form" id="contact-form">
+        <input type="hidden" name="access_key" value={accessKey} />
+        <input
+          type="hidden"
+          name="subject"
+          value="Nuevo mensaje desde LandingPage"
+        />
+        <input type="checkbox" name="botcheck" style="display: none" />
 
-    <div class="contact__field">
-      <label class="contact__label" for="name">Nombre</label>
-      <input
-        class="contact__input"
-        id="name"
-        type="text"
-        name="name"
-        placeholder="Tu nombre"
-        required
-      />
+        <div class="contact__field">
+          <label class="contact__label" for="name">Nombre</label>
+          <input
+            class="contact__input"
+            id="name"
+            type="text"
+            name="name"
+            placeholder="Tu nombre"
+            required
+          />
+        </div>
+
+        <div class="contact__field">
+          <label class="contact__label" for="email">Correo</label>
+          <input
+            class="contact__input"
+            id="email"
+            type="email"
+            name="email"
+            placeholder="tu@correo.com"
+            required
+          />
+        </div>
+
+        <div class="contact__field">
+          <label class="contact__label" for="asunto">Asunto</label>
+          <input
+            class="contact__input"
+            id="asunto"
+            type="text"
+            name="asunto"
+            placeholder="Asunto del mensaje"
+            required
+          />
+        </div>
+
+        <div class="contact__field">
+          <label class="contact__label" for="message">Mensaje</label>
+          <textarea
+            class="contact__textarea"
+            id="message"
+            name="message"
+            placeholder="Escribe tu mensaje aquí..."
+            rows="5"
+            required></textarea>
+        </div>
+
+        <button class="contact__btn" type="submit">Enviar Mensaje</button>
+        <div class="contact__result" id="result"></div>
+      </form>
     </div>
-
-    <div class="contact__field">
-      <label class="contact__label" for="email">Correo</label>
-      <input
-        class="contact__input"
-        id="email"
-        type="email"
-        name="email"
-        placeholder="tu@correo.com"
-        required
-      />
-    </div>
-
-    <div class="contact__field">
-      <label class="contact__label" for="subject">Asunto</label>
-      <input
-        class="contact__input"
-        id="subject"
-        type="text"
-        name="subject"
-        placeholder="Asunto del mensaje"
-        required
-      />
-    </div>
-
-    <div class="contact__field">
-      <label class="contact__label" for="message">Mensaje</label>
-      <textarea
-        class="contact__textarea"
-        id="message"
-        name="message"
-        placeholder="Escribe tu mensaje aquí..."
-        rows="5"
-        required></textarea>
-    </div>
-
-    <button class="contact__btn" type="submit">Enviar Mensaje</button>
-    <div class="contact__result" id="result"></div>
-  </form>
+  </div>
 </section>
 
 <script>
@@ -113,16 +117,35 @@ const accessKey = import.meta.env.PUBLIC_WEB3FORMS_KEY;
 
 <style>
   .contact {
+    padding: 4rem 2rem;
+  }
+
+  .contact__inner {
     max-width: 48rem;
     margin: 0 auto;
-    padding: 4rem 2rem;
   }
 
   .contact__title {
     font-size: 2rem;
     font-weight: 700;
-    color: #0f172a;
     margin-bottom: 2rem;
+    background: linear-gradient(135deg, #6366f1, #3b82f6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .contact__card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    border-radius: 0.75rem;
+    padding: 2rem;
+    transition: box-shadow 0.3s;
+  }
+
+  .contact__card:hover {
+    box-shadow: 0 8px 32px rgba(99, 102, 241, 0.08);
   }
 
   .contact__form {
@@ -146,19 +169,20 @@ const accessKey = import.meta.env.PUBLIC_WEB3FORMS_KEY;
   .contact__input,
   .contact__textarea {
     padding: 0.75rem 1rem;
-    border: 1px solid #e2e8f0;
+    border: 1px solid rgba(226, 232, 240, 0.7);
     border-radius: 0.5rem;
     font-family: inherit;
     font-size: 1rem;
     color: #0f172a;
-    background-color: #fff;
+    background: rgba(248, 250, 252, 0.8);
     outline: none;
-    transition: border-color 0.2s;
+    transition: border-color 0.2s, box-shadow 0.2s;
   }
 
   .contact__input:focus,
   .contact__textarea:focus {
-    border-color: #3b82f6;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
   }
 
   .contact__textarea {
@@ -170,16 +194,17 @@ const accessKey = import.meta.env.PUBLIC_WEB3FORMS_KEY;
     padding: 0.75rem 1.5rem;
     border: none;
     border-radius: 0.5rem;
-    background-color: #0f172a;
+    background: linear-gradient(135deg, #6366f1, #3b82f6);
     color: #fff;
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: box-shadow 0.3s, transform 0.2s;
   }
 
   .contact__btn:hover {
-    background-color: #1e293b;
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.35);
+    transform: translateY(-1px);
   }
 
   .contact__result {

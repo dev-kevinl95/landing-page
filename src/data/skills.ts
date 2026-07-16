@@ -20,3 +20,4 @@ export const skills: Skill[] = [
 ];
 
 export const skillMap = new Map(skills.map((s) => [s.slug, s]));
+ 
