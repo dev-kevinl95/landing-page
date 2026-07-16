@@ -1,7 +1,7 @@
 import { siReact, siTypescript, siAstro, siTailwindcss, siHtml5, siCss, siGit, siGithub, siJavascript, siUnity } from 'simple-icons';
 
 export interface Skill {
-  icon: { path: string };
+  icon: { path: string; hex: string };
   name: string;
   slug: string;
 }
