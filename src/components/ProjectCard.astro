@@ -19,7 +19,7 @@ const placeholderInitial = project.title.charAt(0).toUpperCase();
     )}
   </div>
   <div class="card__body">
-    <h3 class="card__title">Proyecto #{project.id}</h3>
+    <h3 class="card__title">{`${project.title} #${project.id}`}</h3>
     <p class="card__desc">{project.description}</p>
     <div class="card__techs">
       {project.techs.map((slug) => {
